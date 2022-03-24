@@ -6,10 +6,15 @@ public class StatsService {
 
     public int sumAllSales(int[] allSales) {
         for (int allSale : allSales) {
-            sumSales += allSales;
+            sumSales += allSale;
         }
         return sumSales;
     }
+
+    public int averageSumSales(int[] allSales) {
+        int averageSum = 0;
+    }
+
 
 }
 
