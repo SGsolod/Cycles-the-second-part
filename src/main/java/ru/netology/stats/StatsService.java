@@ -12,10 +12,54 @@ public class StatsService {
     }
 
     public int averageSumSales(int[] allSales) {
-        int averageSum = 0;
+        return sumAllSales(allSales) / allSales.length;
     }
 
+    public int peakSales(int[] allSales) {
+        int maxMonth = 0;
+        int month = 0;
+        for (long allSale : allSales) {
+            if (allSale >= allSales[maxMonth]) {
+                maxMonth = month;
+            }
+            month++;
+        }
+        return maxMonth + 1;
+    }
 
+    public int declineSales(int[] allSales) {
+        int minMonth = 0;
+        int month = 0;
+        for (long allSale : allSales) {
+            if (allSale <= allSales[minMonth]) {
+                minMonth = month;
+            }
+            month++;
+        }
+        return minMonth + 1;
+    }
+
+    public int belowAverage(int[] allSales) {
+        int lessThanAverage = 0;
+        float average = averageSumSales(allSales);
+        for (int allSale : allSales) {
+            if (allSale <= average) {
+                lessThanAverage++;
+            }
+        }
+        return lessThanAverage;
+    }
+
+    public int aboveAverage(int[] allSales) {
+        int moreThanAverage = 0;
+        float average = averageSumSales(allSales);
+        for (int allSale : allSales) {
+            if (allSale >= average) {
+                moreThanAverage++;
+            }
+        }
+        return moreThanAverage;
+    }
 }
 
 
