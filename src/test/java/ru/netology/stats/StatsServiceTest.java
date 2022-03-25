@@ -50,7 +50,7 @@ class StatsServiceTest {
     void shouldBelowAverage() {
         StatsService service = new StatsService();
         int[] allSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 7;
+        int expected = 5;
 
         int actual = service.belowAverage(allSales);
         assertEquals(expected, actual);
@@ -60,7 +60,7 @@ class StatsServiceTest {
     void shouldAboveAverage() {
         StatsService service = new StatsService();
         int[] allSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 7;
+        int expected = 5;
 
         int actual = service.aboveAverage(allSales);
         assertEquals(expected, actual);

@@ -43,7 +43,7 @@ public class StatsService {
         int lessThanAverage = 0;
         float average = averageSumSales(allSales);
         for (int allSale : allSales) {
-            if (allSale <= average) {
+            if (allSale < average) {
                 lessThanAverage++;
             }
         }
@@ -54,7 +54,7 @@ public class StatsService {
         int moreThanAverage = 0;
         float average = averageSumSales(allSales);
         for (int allSale : allSales) {
-            if (allSale >= average) {
+            if (allSale > average) {
                 moreThanAverage++;
             }
         }
